@@ -1,21 +1,32 @@
 function y=Fade_in(son)
 
-[yin,Fs]=wavread(son);
+[yin,Fs]=audioread(son);
 
-FADE_LEN = 5; % 5 second fade
+yin=yin';
 
-fade_samples = round(FADE_LEN.*Fs); % figure out how many samples fade is over
-fade_scale = linspace(0,1,fade_samples)'; % create fade
+if size(yin)>=1
+    yin(:,1)= [];
+    yin(:,2)= [];
+    yin(:,3)= [];
+    yin(:,4)= [];
+    yin(:,5)= [];
+    yin(:,6)= [];
+    yin(:,7)= [];
+    yin(:,8)= [];
+end
 
-sig_faded = yin;
-sig_faded(1:fade_samples) = yin(1:fade_samples).*fade_scale; % apply fade
+step=1/length(yin);
+fd=0:step:(1-step);
+size(yin)
+size(fd)
+fadin=fd.*yin;
+y=fadin;
 
-
-sound(sig_faded,Fs);
+sound(y,Fs);
 
 figure(1)
 hold on
 plot(yin,'r');
 figure(2)
-plot(sig_faded,'b');
+plot(y,'b');
 title('Flanger and original Signal');

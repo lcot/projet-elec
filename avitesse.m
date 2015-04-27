@@ -4,7 +4,7 @@ function y=avitesse(son)
 
 N=length(x);
 M2=2;
-x_inter=zeros(1,N/2);
+x_inter=zeros(1,N/M2);
 k=1;
 for i=1:M2:N;
     x_inter(k)=x(i);
