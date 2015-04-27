@@ -6,9 +6,6 @@ Fc = 5;
 alpha = 0.5;
 trem=(1+ alpha*sin(2*pi*index*(Fc/Fs)))';
 y = trem.*x;
-% write output
-wavwrite(y,Fs,bits,'out_tremolo1.wav');
-
 figure(1)
 hold on
 plot(x,'r');
