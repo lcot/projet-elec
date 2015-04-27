@@ -1,4 +1,4 @@
-function y=LPitch(son)
+function y=avitesse(son)
 
 [x,Fs]=audioread(son);
 
