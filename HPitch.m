@@ -13,10 +13,9 @@ if(size(x) >= 2) %Permet si la matrice à plus d'une colonne de supprimer la seco
 end
 
 N=length(x);
-M2=0.5;
-x_inter=zeros(1,M2*N);
-x_inter(1:M2:M2*N)=x;
-y=x_inter;
+M1=2;
+x_deci=x(1:M1:N);
+y=x_deci;
 
 sound(y,Fs);
 figure(1)
