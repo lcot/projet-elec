@@ -26,8 +26,6 @@ for i = (max_samp_delay+1):length(x),
   % add delayed sample
   y(i) = (amp*x(i)) + amp*(x(i-cur_delay));
 end
-% write output
-wavwrite(y,Fs,outfile);
 figure(1)
 hold on
 plot(x,'r');

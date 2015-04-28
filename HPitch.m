@@ -1,6 +1,7 @@
-function HPitch = Untitled(son)
+function y = HPitch(son)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
+
 
 [yin, Fs]=audioread(son);
 
@@ -13,15 +14,8 @@ end
 
 N=length(x);
 M2=0.5;
-x_inter=zeros(2*(N*M2), 1);
-
-length(x_inter)
-length(x)
-
-size(x)
-size(x_inter)
-x_inter(1:M2:N*M2)=x;
-
+x_inter=zeros(1,M2*N);
+x_inter(1:M2:M2*N)=x;
 y=x_inter;
 
 sound(y,Fs);
@@ -31,7 +25,6 @@ plot(x,'r');
 figure(2)
 plot(y,'b');
 title('Flanger and original Signal');
-
 
 end
 
