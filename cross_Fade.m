@@ -14,7 +14,7 @@ alea=rand();
 fd=0;
 fadin=0;
 fadout=0;
-if alea>0.5
+if alea>0.5;
     step=1/200001;
     fd=0:step:(1-step);
     y(k-200000:1:k)=fd.*yinn(k-200000:1:k);

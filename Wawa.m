@@ -14,7 +14,7 @@ function y = Wawa(son)
 %
 % vary Fc from 500 to 5000 Hz
 % read in wav sample
-[ x, Fs, N ] = wavread(son);
+[ x, Fs ] = audioread(son);
 %%%%%%% EFFECT COEFFICIENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % damping factor
@@ -59,10 +59,10 @@ end
 maxyb = max(abs(yb));
 yb = yb/maxyb;
 % write output wav files
-wavwrite(yb, Fs, N, 'out_wah.wav');
+
 figure(1)
 hold on
 plot(x,'r');
 plot(yb,'b');
 title('Wah-wah and original Signal');
-sound(yb,Fs,N);
+sound(yb,Fs);

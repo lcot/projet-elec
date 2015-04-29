@@ -2,15 +2,14 @@ function y=Fade_out(son)
 
 [yin,Fs]=audioread(son);
 
-if size(yin)>=2
+if size(yin)>=2;
     yin(:,2)= [];
 end
 
 yin=yin';
 step=1/length(yin);
 fd=1:-step:(0+step);
-size(yin)
-size(fd)
+
 fadout=fd.*yin;
 y=fadout;
 
