@@ -2,7 +2,7 @@ function y=Vibrato(son)
 ya_alt=0;
 Modfreq = 10; %10 kHz
 Width = 0.0008; %0.8 Milliseconds
-[x,SAMPLERATE,N]=wavread(son);
+[x,SAMPLERATE]=audioread(son);
 
 Delay=Width; % basic delay of input sample in sec
 DELAY=round(Delay*SAMPLERATE); % basic delay in # samples
@@ -36,4 +36,4 @@ figure(2)
 plot(y,'b');
 title('Flanger and original Signal');
 
-sound(y,SAMPLERATE,N);
+sound(y,SAMPLERATE);
