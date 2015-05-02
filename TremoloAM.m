@@ -1,6 +1,6 @@
 function y=TremoloAM(son)
 % read the sample waveform
-[x,Fs,bits] = wavread(son);
+[x,Fs] = audioread(son);
 index = 1:length(x);
 Fc = 5;
 alpha = 0.5;

@@ -1,9 +1,8 @@
 function y=Flanger(son)
 % Creates a single FIR delay with the delay time oscillating from
 % Either0-3msor0-15msat0.1-5Hz
-outfile='out_flanger.wav';
 % read the sample waveform
-[x,Fs,bits] = wavread(son);
+[x,Fs] = audioread(son);
 % parameters to vary the effect %
 max_time_delay=0.003; % 3ms max delay in seconds
 rate=1; %rate of flange in Hz
@@ -33,4 +32,4 @@ figure(2)
 plot(y,'b');
 title('Flanger and original Signal');
 
-sound(y,Fs,bits);
+sound(y,Fs);
