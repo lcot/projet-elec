@@ -1,4 +1,4 @@
-function y=Echo1(son)
+function y=canon(son)
  
 [x,Fs]=audioread(son);
  
@@ -15,7 +15,14 @@ for i=R+1:1:xlen
     y(i)=x(i)+a*x(i-R);
     d(i)=a*x(i-R);
 end
-
+for i=R+2:1:xlen
+    y(i)=y(i)+a*x(i-R);
+    d(i)=a*x(i-R);
+end
+for i=R+3:1:xlen
+    y(i)=y(i)+a*x(i-R);
+    d(i)=a*x(i-R);
+end
 figure(1)
 hold on
 plot(x,'r');
@@ -24,3 +31,4 @@ plot(y,'b');
 title('Flanger and original Signal');
 
 sound(y,Fs);
+
