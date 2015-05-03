@@ -190,7 +190,7 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Pour quitter l'interface
+% --- Executes on button press in ExitButton.
 function ExitButton_Callback(hObject, eventdata, handles)
 % hObject    handle to ExitButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -200,7 +200,7 @@ close(handles.Sons)
 
 
 
-% --- Pour stopper la musique
+% --- Executes on button press in StopButton.
 function StopButton_Callback(hObject, eventdata, handles)
 % hObject    handle to StopButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
